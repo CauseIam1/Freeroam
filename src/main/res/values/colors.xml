@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material Design Required Colors -->
+    <color name="purple_500">#a855f7</color>
+    <color name="purple_700">#7e22ce</color>
+    <color name="white">#ffffff</color>
+    <color name="teal_200">#66b3ff</color>
+    <color name="teal_700">#008ba3</color>
+    <color name="black">#000000</color>
+    
+    <!-- Background Colors -->
+    <color name="bg_primary">#0a0a0f</color>
+    <color name="bg_secondary">#12121a</color>
+    <color name="bg_card">#1a1a25</color>
+    
+    <!-- Electric Blue (Talk/Active) -->
+    <color name="electric_blue">#00d4ff</color>
+    <color name="idle_blue">#4a90a4</color>
+    <color name="blue_glow">#66b3ff</color>
+    <color name="blue_pulse">#00a8cc</color>
+    
+    <!-- Purple (Push/File) -->
+    <color name="purple_accent">#a855f7</color>
+    <color name="purple_glow">#c084fc</color>
+    <color name="purple_pulse">#9333ea</color>
+    
+    <!-- Grey (Disconnected/Inactive) -->
+    <color name="grey_disconnected">#6b7280</color>
+    <color name="grey_inactive">#4b5563</color>
+    <color name="grey_dark">#1f2937</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#e5e7eb</color>
+    <color name="text_on_bg">#e5e7eb</color>
+    <color name="text_on_accent">#0a0a0f</color>
+    <color name="text_muted">#9ca3af</color>
+    <color name="text_secondary">#9ca3af</color>
+    
+    <!-- Bubble Colors -->
+    <color name="bubble_user">#1e3a5f</color>
+    <color name="bubble_ai">#1f2937</color>
+    
+    <!-- Additional Grey Shades for Layout -->
+    <color name="grey">#6b7280</color>
+    <color name="dark_grey">#374151</color>
+    <color name="darker_grey">#1f2937</color>
+    
+    <!-- Electric Purple for Push Button -->
+    <color name="electric_purple">#a855f7</color>
+    <color name="light_purple">#c084fc</color>
+    
+    <!-- Light Blue for Talk Button -->
+    <color name="light_blue">#4a90a4</color>
+
+    <!-- Mic capturing state tint -->
+    <color name="alert_red">#ff5252</color>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         LGI — LOOKING GLASS (v1.4 QSS-exact tokens, hud_ui.py glass alphas)
+         Source: LGI/hud_ui.py build_hud_qss — hex/alpha pairs transcribed
+         exactly. Lookup-only reference: LGI/hud_ui.py, LGI/gateway_feed.py.
+         ═══════════════════════════════════════════════════════════════════ -->
+    <color name="lgi_bg">#0a0e14f0</color>            <!-- rgba(10,14,20,240) hud glass -->
+    <color name="lgi_deep">#03070d96</color>          <!-- rgba(3,7,13,150) browser/row base -->
+    <color name="lgi_deep_dim">#03070d78</color>      <!-- rgba(3,7,13,120) "you" bubble bg -->
+    <color name="lgi_panel">#0f172ad2</color>         <!-- rgba(15,23,42,210) settings panel -->
+    <color name="lgi_title">#00e5ff</color>           <!-- accent / #title     -->
+    <color name="lgi_text">#dbe7f3</color>            <!-- QLabel #dbe7f3      -->
+    <color name="lgi_ledtag">#64748b</color>          <!-- QLabel#ledtag       -->
+    <color name="lgi_polaris_text">#9ae6ff</color>    <!-- polaris transcript  -->
+    <color name="lgi_input_text">#e0f7ff</color>      <!-- QLineEdit #e0f7ff   -->
+    <color name="lgi_you_text">#f8fafc</color>        <!-- "you" bubble text #f8fafc -->
+    <color name="lgi_button_text">#93c5fd</color>     <!-- QPushButton #93c5fd -->
+    <color name="lgi_border">#00e5ff46</color>        <!-- hud border rgba(...,70) -->
+    <color name="lgi_border_soft">#00e5ff2d</color>   <!-- panel/border rgba(...,45) -->
+    <color name="lgi_border_faint">#00e5ff1e</color>  <!-- "you" border rgba(...,30) -->
+    <color name="lgi_border_mid">#00e5ff3c</color>    <!-- rgba(...)60 grooves/selection -->
+    <color name="lgi_solid_mid">#00e5ff50</color>     <!-- rgba(...)80 views        -->
+    <color name="lgi_solid_hot">#00e5ff78</color>     <!-- rgba(...)120 checked tab -->
+    <color name="lgi_slider_groove">#00e5ff3c</color> <!-- slider groove rgba(...,60) -->
+    <color name="lgi_alert_border">#ef4444</color>    <!-- QMessageBox#alert       -->
+    <color name="lgi_alert_bg">#ef44442d</color>      <!-- rgba(239,68,68,45)      -->
+    <color name="lgi_alert_text">#fecaca</color>      <!-- alert #fecaca           -->
+
+    <!-- Task-feed row colors (gateway_feed.py TASK_ROW_STYLES) -->
+    <color name="task_registered">#93c5fd</color>
+    <color name="task_started">#22d3ee</color>
+    <color name="task_progress">#f59e0b</color>
+    <color name="task_completed">#22c55e</color>
+    <color name="task_failed">#ef4444</color>
+    <color name="chat_tool">#c084fc</color>
+
+    <!-- Status LEDs (dashboard dot semantics: green on / amber linking / red down) -->
+    <color name="lgi_led_on">#22c55e</color>
+    <color name="lgi_led_linking">#f59e0b</color>
+    <color name="lgi_led_dim">#64748b</color>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LGI status LED — OFF / idle (dim slot with slate ring) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="#1e293b" />
+    <stroke
+        android:width="1dp"
+        android:color="@color/lgi_led_dim" />
+</shape>

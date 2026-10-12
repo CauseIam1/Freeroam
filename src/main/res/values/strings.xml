@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FreeRoam</string>
+    <string name="service_notification_channel">Tactical Service</string>
+    <string name="service_notification_title">FreeRoam Active</string>
+    <string name="service_notification_text">BLE scanner and photo watcher running</string>
+    <string name="notification_channel_description">Background service for burst photo capture and BLE telemetry</string>
+
+    <!-- LGI — Looking Glass (hud_ui.py v1.4) -->
+    <string name="lgi_hud_title">◈ LGI — LOOKING GLASS</string>
+    <string name="lgi_led_pol">POL</string>
+    <string name="lgi_led_feed">FEED</string>
+    <string name="lgi_led_tts">TTS</string>
+    <string name="lgi_led_mic">MIC</string>
+    <string name="lgi_kebab">⋯</string>
+    <string name="lgi_drawer_title">⚙ CONTROLS</string>
+    <string name="lgi_label_voice">VOICE</string>
+    <string name="lgi_label_speed">SPEED</string>
+    <string name="lgi_label_identity">IDENTITY</string>
+    <string name="lgi_ops_title_open">▼ TACTICAL OPERATIONS</string>
+    <string name="lgi_ops_title_closed">▶ TACTICAL OPERATIONS</string>
+    <string name="lgi_taskfeed_waiting">waiting for the status room…</string>
+    <string name="lgi_taskfeed_empty">no task events — Polaris is calm</string>
+    <string name="lgi_task_status_none">%1$d ACTIVE · %2$s</string>
+    <string name="lgi_task_row">%1$s  %2$s</string>
+    <string name="lgi_chip_voice">VOICE: %1$s</string>
+    <string name="lgi_chip_speed">SPD: %1$s</string>
+    <string name="lgi_chip_mic">MIC: %1$s</string>
+    <string name="lgi_mic_idle">IDLE</string>
+    <string name="lgi_mic_listening">LISTENING</string>
+    <string name="lgi_tts_idle">IDLE</string>
+    <string name="lgi_tts_speaking">SPEAKING</string>
+</resources>

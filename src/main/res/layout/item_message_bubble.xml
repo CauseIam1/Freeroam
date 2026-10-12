@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp">
+
+    <!-- The bubble itself. Width wraps the message so bubbles hug their
+         content. The background drawable (bubble_user/bubble_ai, set in code)
+         provides the 16dp/12dp padding. Per-message gravity (START/END) is
+         applied in MainActivity.rebuildChatUI(). -->
+    <LinearLayout
+        android:id="@+id/bubbleBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/bubbleSender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:textColor="@color/lgi_ledtag"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/bubbleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/lgi_you_text" />
+
+        <!-- Per-bubble playback control for Polaris replies (bound in
+             MainActivity.rebuildChatUI()). -->
+        <ImageButton
+            android:id="@+id/bubblePlayButton"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="start"
+            android:layout_marginTop="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Play message audio"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_play"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</FrameLayout>

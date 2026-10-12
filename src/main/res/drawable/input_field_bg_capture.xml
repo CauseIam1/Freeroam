@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- v3.4 capture-visibility state: the input field swaps to this while a
+     voice capture is live, so a watch PLAY press shows an obvious red
+     "listening" target without tapping the field first. Mirrors
+     input_field_bg.xml (padding matches so text never shifts on swap). -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#241313"/>
+    <corners android:radius="8dp"/>
+    <stroke
+        android:width="2dp"
+        android:color="@color/alert_red"/>
+    <padding
+        android:left="12dp"
+        android:top="8dp"
+        android:right="12dp"
+        android:bottom="8dp"/>
+</shape>

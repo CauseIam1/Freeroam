@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/lgi_bg">
+
+    <!-- ══ LGI HEADER STRIP — title + POL/TTS/MIC LEDs + ⋯ kebab ══════════ -->
+    <LinearLayout
+        android:id="@+id/hudTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:paddingEnd="4dp"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/hudTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lgi_hud_title"
+            android:textColor="@color/lgi_title"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.10"/>
+
+        <View
+            android:id="@+id/polLed"
+            android:layout_width="9dp"
+            android:layout_height="9dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/led_off"/>
+
+        <TextView
+            android:id="@+id/connectionStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lgi_led_pol"
+            android:textColor="#ff4444"
+            android:textSize="9sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:layout_marginEnd="10dp"/>
+
+        <View
+            android:id="@+id/processingIndicator"
+            android:layout_width="9dp"
+            android:layout_height="9dp"
+            android:background="@drawable/sphere_idle"
+            android:layout_marginEnd="14dp"/>
+
+        <View
+            android:id="@+id/ttsLed"
+            android:layout_width="9dp"
+            android:layout_height="9dp"
+            android:background="@drawable/led_off"
+            android:layout_marginEnd="3dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lgi_led_tts"
+            android:textColor="@color/lgi_ledtag"
+            android:textSize="8sp"
+            android:fontFamily="monospace"
+            android:layout_marginEnd="12dp"/>
+
+        <View
+            android:id="@+id/micLed"
+            android:layout_width="9dp"
+            android:layout_height="9dp"
+            android:background="@drawable/led_off"
+            android:layout_marginEnd="3dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lgi_led_mic"
+            android:textColor="@color/lgi_ledtag"
+            android:textSize="8sp"
+            android:fontFamily="monospace"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/hudKebab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lgi_kebab"
+            android:textColor="@color/lgi_button_text"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/lgi_drawer_title"/>
+    </LinearLayout>
+
+    <!-- ══ ⚙ CONTROLS DRAWER (hidden until ⋯) — LGI settings pull-down ════ -->
+    <LinearLayout
+        android:id="@+id/hudSettingsDrawer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="@drawable/lgi_panel_bg"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="8dp"
+        android:padding="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lgi_drawer_title"
+            android:textColor="@color/lgi_title"
+            android:textSize="9sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.08"/>
+
+        <Spinner
+            android:id="@+id/voiceSelector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/lgi_input_bg"
+            android:padding="6dp"
+            android:layout_marginTop="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lgi_label_speed"
+                android:textColor="@color/lgi_ledtag"
+                android:textSize="9sp"
+                android:fontFamily="monospace"
+                android:layout_marginEnd="8dp"/>
+
+            <SeekBar
+                android:id="@+id/speedSlider"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="0"
+                android:thumbTint="@color/lgi_title"
+                android:progressTint="@color/lgi_title"
+                android:progressBackgroundTint="@color/lgi_slider_groove"/>
+
+            <TextView
+                android:id="@+id/speedValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.0x"
+                android:textColor="@color/lgi_polaris_text"
+                android:textSize="10sp"
+                android:fontFamily="monospace"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lgi_label_identity"
+                android:textColor="@color/lgi_ledtag"
+                android:textSize="9sp"
+                android:fontFamily="monospace"
+                android:layout_marginEnd="8dp"/>
+
+            <ImageButton
+                android:id="@+id/userIdentityButton"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_person"
+                android:contentDescription="@string/lgi_label_identity"
+                app:tint="@color/lgi_button_text"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/voiceChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/lgi_button_text"
+                android:textSize="9sp"
+                android:fontFamily="monospace"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ══ CHAT (top half) ═════════════════════════════════════════════════ -->
+    <FrameLayout
+        android:id="@+id/chatContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="45"
+        android:background="@color/lgi_deep">
+
+        <!-- Chat Scroll Area -->
+        <ScrollView
+            android:id="@+id/chatScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/chatBubbleContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"/>
+        </ScrollView>
+
+        <!-- No Chats Placeholder -->
+        <TextView
+            android:id="@+id/noChatsText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="No messages yet.\nStart a conversation with Polaris."
+            android:textColor="@color/text_muted"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:visibility="gone"/>
+    </FrameLayout>
+
+    <!-- ══ ▼ TACTICAL OPERATIONS (bottom half) — LGI Looking-Glass mirror ══ -->
+    <LinearLayout
+        android:id="@+id/opsPane"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="37"
+        android:orientation="vertical"
+        android:background="@drawable/lgi_ops_bg"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/opsToggle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lgi_ops_title_open"
+                android:textColor="@color/lgi_title"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.08"
+                android:padding="6dp"
+                android:background="?attr/selectableItemBackgroundBorderless"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/taskStatusLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="…"
+                android:textColor="@color/lgi_ledtag"
+                android:textSize="9sp"
+                android:fontFamily="monospace"
+                android:layout_marginEnd="8dp"/>
+
+            <View
+                android:id="@+id/feedLed"
+                android:layout_width="9dp"
+                android:layout_height="9dp"
+                android:background="@drawable/led_off"
+                android:layout_marginEnd="4dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lgi_led_feed"
+                android:textColor="@color/lgi_ledtag"
+                android:textSize="8sp"
+                android:fontFamily="monospace"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/opsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginTop="4dp">
+
+            <ScrollView
+                android:id="@+id/taskFeedScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:id="@+id/taskFeedContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="2dp">
+
+                    <TextView
+                        android:id="@+id/taskFeedPlaceholder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lgi_taskfeed_waiting"
+                        android:textColor="@color/lgi_ledtag"
+                        android:textSize="10sp"
+                        android:fontFamily="monospace"/>
+                </LinearLayout>
+            </ScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp"
+                android:layout_marginTop="6dp">
+
+                <TextView
+                    android:id="@+id/speedChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/lgi_button_text"
+                    android:textSize="9sp"
+                    android:fontFamily="monospace"
+                    android:layout_marginEnd="12dp"/>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/micChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/lgi_button_text"
+                    android:textSize="9sp"
+                    android:fontFamily="monospace"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ══ TEXT INPUT (bottom) — LGI QLineEdit row ═════════════════════════ -->
+    <LinearLayout
+        android:id="@+id/textInputArea"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="16"
+        android:orientation="horizontal"
+        android:background="@color/lgi_deep"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/messageInput"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/lgi_input_bg"
+            android:padding="10dp"
+            android:textColor="@color/lgi_input_text"
+            android:textColorHint="@color/lgi_ledtag"
+            android:textSize="14sp"
+            android:inputType="textMultiLine|textCapSentences"
+            android:imeOptions="actionSend"
+            android:maxLines="3"
+            android:hint="Type your message to Polaris..."
+            android:layout_marginEnd="8dp"
+            android:gravity="top"/>
+
+        <ImageButton
+            android:id="@+id/micButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_mic"
+            android:contentDescription="Tap to talk to Polaris"
+            android:layout_marginEnd="8dp"
+            app:tint="@color/electric_blue"/>
+
+        <ImageButton
+            android:id="@+id/sendButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_send"
+            android:contentDescription="Send"
+            app:tint="@color/electric_blue"/>
+    </LinearLayout>
+
+    <!-- Mini Player Overlay (Floating) -->
+    <com.freeroam.tactical.ui.PolarisMiniPlayerView
+        android:id="@+id/miniPlayerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:visibility="gone"/>
+
+</LinearLayout>
